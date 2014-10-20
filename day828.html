@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{margin:0;padding:0;}
+.Con{width: 680px; height: 150px; margin:100px auto 0px;}
+.Con .edit{width: 680px;height: 100px;border:2px inset #ddd;border-radius: 5px;}
+.Con .but{width: 680px;height: 50px;} 
+.Con .but .but_img{width: 18px;height: 16px;display: inline-block;background: url(images/but_img1.png);margin-top: 10px;}
+.Con .but .but_img:hover{background: url(images/but_img2.png);}
+.Con .but .fb{width: 80px;height: 35px;background: #e6b85c;display: inline-block;color: #fff;text-decoration: none;text-align: center;float :right;line-height: 35px;
+		margin:5px 0 0 10px;}
+.Con .but .qx{color: #666;background: #f5efd5;border:1px solid #ede8d1;}
+
+.qq{width: 500px;height: 210px;border:1px solid #666;border-radius: 3px;box-shadow: 0px 0px 5px #666;display: none;}
+.qq .list{ width: 120px;height: 210px;background: #eee; float:left;}
+.qq .face{width: 375px;height: 210px;float:right;}
+/* .qq .list ul{border:2px solid #000;} */
+.qq .list ul li{
+	height: 30px;width: 120px;list-style: none;font-size: 14px;color:#666;text-align: center;line-height: 30px;border-bottom: 1px solid #FFF;
+}
+.qq .list ul li:hover{color: #000;background: #FF9933;}
+.qq .face ul li{list-style-type: none;float: left;margin: 5px 2px;}
+
+	</style>
+</head>
+<body>
+	<div class="Con">
+		<div class="edit" contentEditable="true" ></div>
+		<div class="but">
+			
+			<a href="#" class="fb">发表</a>
+			<a href="#" class="fb qx">取消</a>
+
+			<a href="#" class="but_img"></a>
+
+		</div>
+		<div class="qq">
+			<div class="list">
+				<ul>
+				
+				<li class="hover">QQ - 表情</li>
+				<li>微博 - 表情</li>
+				<li>微信 - 表情</li>
+				<li>陌陌 - 表情</li>
+
+				</ul>
+			</div>
+			<div class="face">
+				<ul>
+					<li><img src="images/88_thumb.gif" title="88"></li>
+					<li><img src="images/angrya_thumb.gif" title="哈哈"></li>
+					<li><img src="images/bba_thumb.gif" title="哈哈"></li>
+					<li><img src="images/boboshengmenqi_thumb.gif" title="哈哈"></li>
+					<li><img src="images/bofubianlian_thumb.gif" title="哈哈"></li>
+					<li><img src="images/bs2_thumb.gif" title="哈哈"></li>
+					<li><img src="images/cake.gif" title="哈哈"></li>
+					<li><img src="images/camera_thumb.gif" title="哈哈"></li>
+					<li><img src="images/cat_yunqizhong_thumb.gif" title="哈哈"></li>
+					<li><img src="images/chn_buyaoya_thumb.gif" title="哈哈"></li>
+					<li><img src="images/cj_thumb.gif" title="哈哈"></li>
+					<li><img src="images/clock_thumb.gif" title="哈哈"></li>
+					<li><img src="images/come_thumb.gif" title="哈哈"></li>
+					<li><img src="images/cool_thumb.gif" title="哈哈"></li>
+					<li><img src="images/crazya_thumb.gif" title="哈哈"></li>
+					<li><img src="images/cry.gif" title="哈哈"></li>
+					<li><img src="images/cza_thumb.gif" title="哈哈"></li>
+					<li><img src="images/daxiongleibenxiong_thumb.gif" title="哈哈"></li>
+					<li><img src="images/dizzya_thumb.gif" title="哈哈"></li>
+					<li><img src="images/crazya_thumb.gif" title="哈哈"></li>
+					<li><img src="images/cool_thumb.gif" title="哈哈"></li>
+					<li><img src="images/cza_thumb.gif" title="哈哈"></li>
+					<li><img src="images/dizzya_thumb.gif" title="哈哈"></li>
+					<li><img src="images/hatea_thumb.gif" title="哈哈"></li>
+					<li><img src="images/heia_thumb.gif" title="哈哈"></li>
+					<li><img src="images/hsa_thumb.gif" title="哈哈"></li>
+					<li><img src="images/hufen_thumb.gif" title="哈哈"></li>
+					<li><img src="images/cry.gif" title="哈哈"></li>
+					<li><img src="images/cza_thumb.gif" title="哈哈"></li>
+					<li><img src="images/daxiongleibenxiong_thumb.gif" title="哈哈"></li>
+					<li><img src="images/dizzya_thumb.gif" title="哈哈"></li>
+					<li><img src="images/crazya_thumb.gif" title="哈哈"></li>
+					<li><img src="images/cool_thumb.gif" title="哈哈"></li>
+					<li><img src="images/cza_thumb.gif" title="哈哈"></li>
+					<li><img src="images/dizzya_thumb.gif" title="哈哈"></li>
+					<li><img src="images/hatea_thumb.gif" title="哈哈"></li>
+					<li><img src="images/heia_thumb.gif" title="哈哈"></li>
+					<li><img src="images/hsa_thumb.gif" title="哈哈"></li>
+					<li><img src="images/hufen_thumb.gif" title="哈哈"></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="jquery.js"></script>
+<script>
+	$(".but_img").click(function(e){
+		$(".qq").slideToggle("slow");
+		e.stopPropagation();//阻止
+	});
+
+	$(".face ul li").click(function(e){
+		var img=$(this).find("img").clone();//克隆一份
+		$(".edit").append(img);//添加内容；
+		e.stopPropagation();//阻止
+	})
+
+	$(document).click(function(){
+		$(".qq").slideUp("slow");
+	})
+</script>
+
+</body>
+</html>
